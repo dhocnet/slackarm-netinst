@@ -5,10 +5,11 @@
 # Oleh          : mongkeelutfi
 # Email         : mongkee.lutfi@gmail.com
 # Blog          : https://blog.dhocnet.work
-# Kode sumber   : https://github.com/dhocnet/termux/scripts/
+# Kode sumber   : https://github.com/dhocnet/slackarm-netinst
 #
 # Tanggal       : 31 Juli 2018
 #               : 01 Agustus 2018
+#                : 05 Agustus 2018
 
 # mengaktifkan teks blinkblink - text formating
 shopt -s xpg_echo
@@ -179,7 +180,7 @@ CARA_PAKAI () {
     Oleh    : mongkeelutfi
     Info    : mongkee@gmail.com
     Blog    : https://blog.dhocnet.work
-    Proyek  : https://github.com/dhocnet/termux\n
+    Proyek  : https://github.com/dhocnet/slackarm-netinst\n
     01 Agustus 2018, Denpasar, Bali\n
     Untuk menjalankan, gunakan perintah: slackwarego\n"
 }
