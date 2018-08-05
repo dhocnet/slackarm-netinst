@@ -44,9 +44,10 @@ SETUP_RESUME () {
     clear
     echo "Terdeteksi berkas slackware di sistem folder. Apakah Anda ingin melanjutkan proses instalasi?\n
     Y - Lanjutkan
-    N - Install baru (hapus instalasi lama)\n"
+    N - Install baru (hapus instalasi lama)
+    R - Hapus instalasi Slackware dari ponsel\n"
     read -p 'Lanjutkan atau install baru [Y/n]? ' SET_RES
-    if [ $SET_RES = "n" ]
+    if [ $SET_RES = "n"  || $SET_RES = "r" ]
     then
         clear
         echo "Menghapus instalasi lama ..."
@@ -55,7 +56,15 @@ SETUP_RESUME () {
         rm -rf $HOME/slackware 2> /dev/null
         echo "OK."
         sleep 2
-        SETUP_TERMUX
+        if [ $SET_RES = "r" ]
+        then
+            rm /data/data/com.termux/files/usr/bin/slackwarego
+            echo "Uninstall berhasil!"
+            sleep 1
+            exit 0
+        else
+            SETUP_TERMUX
+        fi
     else
         clear
         echo "Pilih tipe instalasi untuk dilanjutkan\n
