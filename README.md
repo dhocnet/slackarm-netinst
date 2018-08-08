@@ -5,10 +5,10 @@ Script sederhana untuk instalasi Slackware Linux di Android menggunakan Termux e
 
 ## Fiturnya apa saja?
 - Deteksi arsitektur mesin otomatis
-- Instalasi menurut arsitektur mesin otomatis
+- Instalasi menurut arsitektur mesin
 - Dua pilihan install
-- - Miniroot (sekitar 370MB penggunaan disk)
-- - Development (sekitar 3.6GB penggunaan disk)
+- - Miniroot
+- - Development
 - Fitur melanjutkan instalasi yang terhenti
 - Fitur upgrade miniroot ke development
 - Fitur uninstall
@@ -27,6 +27,11 @@ Eksekusi dengan perintah:
 `$ bash slackarm-netinst.sh`
 
 Ikuti dialog untuk menyelesaikan instalasi.
+
+## Cara Upgrade
+Saat script dijalankan, script akan mendeteksi direktori instalasi Slackware. Bila ditemukan, Anda akan diperlihatkan pilihan **Lanjutkan instalasi**, **Install ulang** dan **Hapus instalan**.
+
+Untuk melakukan upgrade, pilih **Lanjutkan instalasi** lalu pilih **Upgrade ke developer**.
 
 ## Perlu Diketahui
 Terdapat dua pilihan instalasi yang disediakan. `miniroot` dan `development`. Miniroot akan mengunduh paket sekitar 76MB dan akan memakan ruang penyimpanan sekitar 400MB.
