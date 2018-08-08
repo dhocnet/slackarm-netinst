@@ -40,6 +40,9 @@ Sedangkan development akan mengunduh paket sekitar 1.5GB dan memakan ruang penyi
 
 > Nilai paket yang diunduh dan setelah instalasi adalah nilai perkiraan yang mengikuti perubahan paket dari server.
 
+## PERINGATAN!!!
+Sebaiknya Anda melakukan instalasi menggunakan jaringan yang stabil dan cepat karena banyaknya paket yang diunduh untuk membangun sistem.
+
 ## Manajer Paket
 Untuk manajer paket kami menyarankan untuk menggunakan `slpkg` karena `slplg` mendukung fitur deteksi dependensi pada repository tertentu yang dapat memudahkan proses penambahan program baru.
 
