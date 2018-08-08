@@ -47,7 +47,7 @@ SETUP_RESUME () {
     N - Install baru (hapus instalasi lama)
     R - Hapus instalasi Slackware dari ponsel\n"
     read -p 'Lanjutkan atau install baru [Y/n]? ' SET_RES
-    if [ $SET_RES = "n"  || $SET_RES = "r" ]
+    if [ $SET_RES = "n"  | $SET_RES = "r" ]
     then
         clear
         echo "Menghapus instalasi lama ..."
