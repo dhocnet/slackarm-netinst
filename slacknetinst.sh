@@ -95,7 +95,7 @@ SETUP_TERMUX () {
 
 SETUP_SELECT () {
     clear
-    echo "PILIH JENIS INSTALASI\n\n 1) Miniroot (default) - Perlu disk 500MB\n 2) Development - Perlu disk 4GB\n"
+    echo "PILIH JENIS INSTALASI\n\n 1) Miniroot (default) - dl: 76MB/Inst: 350MB\n 2) Development - Perlu disk 4GB\n"
     read -p 'Pilihan (default: 1) [1/2]: ' pilih_tipe
     if [ $pilih_tipe = "2" ]
     then
@@ -195,7 +195,7 @@ CARA_PAKAI () {
 }
 
 clear
-echo "\nSlackware ARM - NetInstall\n-> https://github.com/dhocnet/termux/"
+echo "\nSlackware ARM - NetInstall\n-> https://github.com/dhocnet/slackarm-netinst/"
 sleep 2
 
 SELECT_ARCH=`uname -m`

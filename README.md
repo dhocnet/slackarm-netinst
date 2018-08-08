@@ -13,9 +13,40 @@ Script sederhana untuk instalasi Slackware Linux di Android menggunakan Termux e
 - Fitur upgrade miniroot ke development
 - Fitur uninstall
 
-## Catatan:
-- Instalasi Development belum di coba!
-
 ## Cara Pakai
+Pada Termux, unduh program `wget` dengan perintah:
+
+`$ apt -y upgrade && apt -y install wget`
+
+Unduh Slackware net-install script:
+
+`$ wget https://github.com/dhocnet/slackarm-netinst/raw/master/slackarm-netinst.sh`
+
+Eksekusi dengan perintah:
+
+`$ bash slackarm-netinst.sh`
+
+Ikuti dialog untuk menyelesaikan instalasi.
+
+## Perlu Diketahui
+Terdapat dua pilihan instalasi yang disediakan. `miniroot` dan `development`. Miniroot akan mengunduh paket sekitar 76MB dan akan memakan ruang penyimpanan sekitar 400MB.
+
+Sedangkan development akan mengunduh paket sekitar 1.5GB dan memakan ruang penyimpanan sekitar 3.5GB.
+
+> Nilai paket yang diunduh dan setelah instalasi adalah nilai perkiraan yang mengikuti perubahan paket dari server.
+
+## Manajer Paket
+Untuk manajer paket kami menyarankan untuk menggunakan `slpkg` karena `slplg` mendukung fitur deteksi dependensi pada repository tertentu yang dapat memudahkan proses penambahan program baru.
+
+Instalasinya dapat dilakukan dengan perintah:
+
+`# pip install slpkg --upgrade`
+
+> Perintah diatas dijalankan pada sistem Slackware
+
+## Catatan:
+- Instalasi Development masih dalam pengembangan!
+
+## Panduan Dengan Gambar
 Langkah-langkah penggunaan bisa di simak di https://blog.dhocnet.work/2018/08/panduan-instalasi-slackware-linux-di.html.
 
