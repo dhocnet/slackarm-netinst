@@ -11,7 +11,7 @@ proot \
     -b /storage/ \
     -b $HOME \
     -w /root \
-    $HOME/slackware/bin/env \
+    /bin/env \
     -i HOME=/root \
     TERM="$TERM" \
     PS1='[root@slackware \w]# ' \
