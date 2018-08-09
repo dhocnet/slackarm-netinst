@@ -48,7 +48,7 @@ Untuk manajer paket kami menyarankan untuk menggunakan `slpkg` karena `slplg` me
 
 Instalasinya dapat dilakukan dengan perintah:
 
-`# pip install slpkg --upgrade`
+`# pip install slpkg`
 
 > Perintah diatas dijalankan pada sistem Slackware
 
