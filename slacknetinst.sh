@@ -15,7 +15,109 @@
 shopt -s xpg_echo
 
 # paket miniroot
-PKG_MINI="a/aaa_base a/aaa_elflibs a/aaa_terminfo a/acl a/attr a/bash a/tar a/bin a/btrfs-progs a/bzip2 a/coreutils a/dbus a/dcron a/devs a/dialog a/e2fsprogs a/ed a/etc a/file a/findutils a/hostname a/hwdata a/lbzip2 a/lvm2 a/less a/gawk a/gettext a/getty-ps a/glibc-solibs a/glibc-zoneinfo a/gptfdisk a/grep a/gzip a/jfsutils a/inotify-tools a/kmod a/lrzip a/lzip a/lzlib a/pkgtools a/procps-ng a/reiserfsprogs a/shadow a/sed a/sysklogd a/usbutils a/util-linux a/which a/xfsprogs a/xz ap/groff ap/man-db ap/man-pages ap/nano ap/slackpkg d/perl d/python d/python-pip d/python-setuptools n/openssl n/ca-certificates n/dhcpcd n/gnupg n/lftp n/libmnl n/network-scripts n/nfs-utils n/ntp n/iputils n/net-tools n/iproute2 n/openssh n/rpcbind n/libtirpc n/rsync n/telnet n/traceroute n/wget n/wpa_supplicant n/wireless-tools l/lzo l/libnl3 l/libidn l/libunistring l/mpfr l/ncurses l/pcre"
+PKG_MINI="a/aaa_base
+a/aaa_elflibs
+a/aaa_terminfo
+a/acl
+a/attr
+a/bash
+a/tar
+a/bin
+a/btrfs-progs
+a/bzip2
+a/coreutils
+a/dbus
+a/dcron
+a/devs
+a/dialog
+a/e2fsprogs
+a/ed
+a/etc
+a/file
+a/findutils
+a/hostname
+a/hwdata
+a/lbzip2
+a/less
+a/gawk
+a/gettext
+a/getty-ps
+a/glibc-solibs
+a/glibc-zoneinfo
+a/gptfdisk
+a/grep
+a/gzip
+a/jfsutils
+a/inotify-tools
+a/kmod
+a/lrzip
+a/lzip
+a/lzlib
+a/pkgtools
+a/procps-ng
+a/reiserfsprogs
+a/shadow
+a/sed
+a/sysklogd
+a/usbutils
+a/util-linux
+a/which
+a/xfsprogs
+a/xz
+ap/groff
+ap/man-db
+ap/man-pages
+ap/nano
+ap/slackpkg
+d/perl
+d/python
+d/python-pip
+d/python-setuptools
+n/openssl
+n/ca-certificates
+n/gnupg
+n/lftp
+n/libmnl
+n/network-scripts
+n/nfs-utils
+n/ntp
+n/iputils
+n/net-tools
+n/iproute2
+n/openssh
+n/rpcbind
+n/libtirpc
+n/rsync
+n/telnet
+n/traceroute
+n/wget
+n/wpa_supplicant
+n/wireless-tools
+l/lzo
+l/libnl3
+l/libidn
+l/libunistring
+l/mpfr
+l/ncurses
+l/pcre"
+
+# Paket tidak berguna di Android
+# PKG_KICK="a/acpid
+# a/elvis
+# a/floppy
+# a/genpower
+# a/gpm
+# a/hdparm
+# a/kbd
+# a/lvm2
+# a/mdadm
+# a/minicom
+# a/mkinitrd
+# a/mt-st
+# a/mtd-utils
+# a/mtx
+# a/os-prober
+# a/
 
 # slackware pkgtools modifikasi untuk digunakan pada termux
 INSTALLPKG_DL="https://github.com/dhocnet/slackarm-netinst/raw/master"
@@ -29,8 +131,19 @@ WGET_P=$HOME/slackware/tmp/pkg
 
 SETUP_MULAI () {
     clear
-    # konfirmasi instalasi paket yang dibutuhkan oleh slackware pkgtools
-    echo "Anda membutuhkan beberapa program lain untuk \nmenyelesaikan instalasi Slackware-current ARM. Yaitu:\n\n 1) wget\n 2) coreutils\n 3) proot\n 4) util-linux\n 5) grep\n 6) Dialog\n 7) lzip\n"
+    # konfirmasi instalasi paket yang dibutuhkan oleh slackware
+    # pkgtools
+    echo "Anda membutuhkan beberapa program lain untuk
+menyelesaikan instalasi Slackware-current ARM. Yaitu:
+
+    1) wget
+    2) coreutils
+    3) proot
+    4) util-linux
+    5) grep
+    6) Dialog
+    7) lzip
+"
     read -p 'Install program [Y/n]? ' ins_y
     if [ $ins_y = "n" ]
     then
@@ -42,11 +155,14 @@ SETUP_MULAI () {
 
 SETUP_RESUME () {
     clear
-    echo "Terdeteksi berkas slackware di sistem folder. Apakah Anda ingin melanjutkan proses instalasi?\n
+    echo "Terdeteksi berkas slackware di sistem folder.
+Apakah Anda ingin melanjutkan proses instalasi?
+
     Y - Lanjutkan
     N - Install baru (hapus instalasi lama)
-    R - Hapus instalasi Slackware dari ponsel\n"
-    read -p 'Lanjutkan atau install baru [Y/n]? ' SET_RES
+    R - Hapus instalasi Slackware dari ponsel
+"
+    read -p 'Lanjutkan [Y/n/r]? ' SET_RES
     if [ $SET_RES = "n"  | $SET_RES = "r" ]
     then
         clear
@@ -70,7 +186,7 @@ SETUP_RESUME () {
         echo "Pilih tipe instalasi untuk dilanjutkan\n
         1) Lanjutkan instalasi miniroot (default)
         2) Upgrade Miniroot ke Development\n"
-        read -p 'Lanjutkan atau upgrade [1/2]? ' SET_UP
+        read -p 'Pilihan [1/2]? ' SET_UP
         if [ $SET_UP = "2" ]
         then
             INSTALL_DEVEL
@@ -95,7 +211,11 @@ SETUP_TERMUX () {
 
 SETUP_SELECT () {
     clear
-    echo "PILIH JENIS INSTALASI\n\n 1) Miniroot (default) - dl: 76MB/Inst: 350MB\n 2) Development - Perlu disk 4GB\n"
+    echo "PILIH JENIS INSTALASI
+    
+    1) Miniroot (default) - dl: 76MB/inst: 350MB+
+    2) Development - dl: 851MB/inst: 5.8GB+
+    "
     read -p 'Pilihan (default: 1) [1/2]: ' pilih_tipe
     if [ $pilih_tipe = "2" ]
     then
@@ -103,9 +223,10 @@ SETUP_SELECT () {
         then
             mkdir -p $HOME/slackware/tmp
         fi
-        echo "1" > $HOME/slackware/tmp/insDEV.y
+        INSTALL_DEVEL
+    else
+        INSTALL_DEFAULT
     fi
-    INSTALL_DEFAULT
 }
 
 INSTALL_DEFAULT () {
@@ -114,32 +235,20 @@ INSTALL_DEFAULT () {
     echo "Mengunduh program installer: installpkg"
     wget -c -t 0 -P $WGET_P/../ -q --show-progress $INSTALLPKG_DL/installpkg
     chmod +x $WGET_P/../installpkg
-    echo "OK."
+    echo "OK.\n"
     echo "Mengunduh paket dasar miniroot:"
     sleep 1
     for PKG_TODL in $PKG_MINI ; do
-        wget -c -t 0 -T 10 -w 5 -P $WGET_P -q --show-progress ftp://mirrors.slackware.bg/$ARCH_SELECT/$PKG_TODL-*.t?z
+        wget -c -t 0 -T 10 -w 5 -P $WGET_P -q --show-progress ftp://mirrors.slackware.bg/$ARCH_SELECT/$PKG_TODL-*.txz
     done
-    echo "OK."
+    echo "OK.\n"
     echo "Memasang sistem dasar Slackware miniroot ..."
     sleep 2
     # buang pesan error yang timbul karena perintah perintah dari installscript doinst.sh
     # biasanya masalah yang timbul karena kesalahan chown fulan.binfulan atau perintah chroot
     # yang tidak terdapat pada termux environment
-    $INSTALL_SYS --terse --root $HOME/slackware/ $WGET_P/*.t?z 2> /dev/null
-    echo "Memeriksa pilihan Development ..."
-    sleep 1
-    if [ -f $HOME/slackware/tmp/insDEV.y ]
-    then
-        echo "Ditemukan!\nMelanjutkan instalasi paket Development ..."
-        rm $HOME/slackware/tmp/insDEV.y
-        sleep 1
-        INSTALL_DEVEL
-    else
-        echo "Tidak ditemukan!\nMenyelesaikan instalasi ..."
-        sleep 1
-        INSTALL_STATER
-    fi
+    $INSTALL_SYS --terse --root $HOME/slackware/ $WGET_P/*.txz 2> /dev/null
+    INSTALL_STATER
 }
 
 INSTALL_DEVEL () {
@@ -150,16 +259,14 @@ INSTALL_DEVEL () {
     echo "OK.\n\nMengunduh paket Development:"
     chmod +x $WGET_P/../{removepkg,upgradepkg}
     sleep 1
-    #apt -y install lftp
     for PKG_DEVDL in $PKG_DEVDIR ; do
         wget -c -t 0 -r -np -nd -q --show-progress -T 10 -w 5 -A '.txz' -P $WGET_P https://mirrors.slackware.bg/$ARCH_SELECT/$PKG_DEVDL/
-        #lftp -c 'open https://mirrors.slackware.bg/$ARCH_SELECT/$PKG_DEVDL/ ; mirror -c -e $WGET_P'
     done
-    echo "OK.\nMemasang paket Development:"
+    echo "OK.\n\nMemasang paket Development:"
     sleep 1
     ROOT=$HOME/slackware
-    $UPGRADE_SYS --install-new $WGET_P/*.t?z 2> /dev/null
-    echo "\n\nInstalasi paket Development selesai.\nMelanjutkan finishing ..."
+    $UPGRADE_SYS --install-new $WGET_P/*.txz 2> /dev/null
+    echo "\n\nInstalasi paket Development selesai.\nFinishing ..."
     sleep 1
     INSTALL_STATER
 }
@@ -167,7 +274,7 @@ INSTALL_DEVEL () {
 INSTALL_STATER () {
     clear
     echo "Memasang script pemicu ..."
-    wget -c -q --show-progress -P $HOME/../usr/bin/ https://github.com/dhocnet/termux/raw/master/scripts/launcher/slackwarego
+    wget -c -q --show-progress -P $HOME/../usr/bin/ $INSTALLPKG_DL/slackwarego
     chmod +x $HOME/../usr/bin/slackwarego
     echo "nameserver 8.8.8.8" > $HOME/slackware/etc/resolv.conf
     echo "OK ..."
@@ -175,7 +282,8 @@ INSTALL_STATER () {
     echo "Membersihkan sisa-sisa instalasi ..."
     sleep 1
     rm -vrf $HOME/slackware/tmp/*
-    # hemat penyimpanan internal dari program yang dipasang sebelumnya untuk kebutuhan instalasi
+    # hemat penyimpanan internal dari program yang dipasang
+    # sebelumnya untuk kebutuhan instalasi
     apt -y remove grep coreutils lzip tar wget util-linux dialog
     apt -y autoremove
     echo "OK ..."
