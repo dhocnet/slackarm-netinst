@@ -20,7 +20,7 @@ Pada Termux, unduh program `wget` dengan perintah:
 
 Unduh Slackware net-install script:
 
-`$ wget https://github.com/dhocnet/slackarm-netinst/raw/master/slackarm-netinst.sh`
+`$ wget https://github.com/dhocnet/slackarm-netinst/raw/master/slacknetinst.sh`
 
 Eksekusi dengan perintah:
 
