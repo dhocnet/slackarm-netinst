@@ -14,6 +14,9 @@
 # mengaktifkan teks blinkblink - text formating
 shopt -s xpg_echo
 
+# memperbaiki variabel $HOME pada beberapa ROM saat berada pada mode root
+HOME=/data/data/com.termux/files/home
+
 # paket miniroot
 PKG_MINI="a/aaa_base
 a/aaa_elflibs
@@ -191,7 +194,7 @@ Apakah Anda ingin melanjutkan proses instalasi?
         then
             INSTALL_DEVEL
         else
-            SETUP_SELECT
+            INSTALL_DEFAULT
         fi
     fi
 }
