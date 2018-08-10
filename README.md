@@ -24,7 +24,7 @@ Unduh Slackware net-install script:
 
 Eksekusi dengan perintah:
 
-`$ bash slackarm-netinst.sh`
+`$ bash slacknetinst.sh`
 
 Ikuti dialog untuk menyelesaikan instalasi.
 
