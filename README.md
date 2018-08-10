@@ -36,7 +36,7 @@ Untuk melakukan upgrade, pilih **Lanjutkan instalasi** lalu pilih **Upgrade ke d
 ## Perlu Diketahui
 Terdapat dua pilihan instalasi yang disediakan. `miniroot` dan `development`. Miniroot akan mengunduh paket sekitar 76MB dan akan memakan ruang penyimpanan sekitar 400MB.
 
-Sedangkan development akan mengunduh paket sekitar 1.5GB dan memakan ruang penyimpanan sekitar 3.5GB.
+Sedangkan development akan mengunduh paket sekitar 851MB dan memakan ruang penyimpanan sekitar 4.5GB.
 
 > Nilai paket yang diunduh dan setelah instalasi adalah nilai perkiraan yang mengikuti perubahan paket dari server.
 
