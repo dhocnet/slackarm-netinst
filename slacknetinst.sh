@@ -104,24 +104,6 @@ l/mpfr
 l/ncurses
 l/pcre"
 
-# Paket tidak berguna di Android
-# PKG_KICK="a/acpid
-# a/elvis
-# a/floppy
-# a/genpower
-# a/gpm
-# a/hdparm
-# a/kbd
-# a/lvm2
-# a/mdadm
-# a/minicom
-# a/mkinitrd
-# a/mt-st
-# a/mtd-utils
-# a/mtx
-# a/os-prober
-# a/
-
 # slackware pkgtools modifikasi untuk digunakan pada termux
 INSTALLPKG_DL="https://github.com/dhocnet/slackarm-netinst/raw/master"
 
@@ -166,7 +148,7 @@ Apakah Anda ingin melanjutkan proses instalasi?
     R - Hapus instalasi Slackware dari ponsel
 "
     read -p 'Lanjutkan [Y/n/r]? ' SET_RES
-    if [ $SET_RES = "n"  | $SET_RES = "r" ]
+    if [ $SET_RES = "n" | $SET_RES = "r" ]
     then
         clear
         echo "Menghapus instalasi lama ..."
@@ -180,7 +162,7 @@ Apakah Anda ingin melanjutkan proses instalasi?
             rm /data/data/com.termux/files/usr/bin/slackwarego
             echo "Uninstall berhasil!"
             sleep 1
-            exit 0
+            kill $$
         else
             SETUP_TERMUX
         fi
@@ -285,10 +267,6 @@ INSTALL_STATER () {
     echo "Membersihkan sisa-sisa instalasi ..."
     sleep 1
     rm -vrf $HOME/slackware/tmp/*
-    # hemat penyimpanan internal dari program yang dipasang
-    # sebelumnya untuk kebutuhan instalasi
-    apt -y remove grep coreutils lzip tar wget util-linux dialog
-    apt -y autoremove
     echo "OK ..."
     sleep 1
     CARA_PAKAI
@@ -301,7 +279,7 @@ CARA_PAKAI () {
     Info    : mongkee@gmail.com
     Blog    : https://blog.dhocnet.work
     Proyek  : https://github.com/dhocnet/slackarm-netinst\n
-    01 Agustus 2018, Denpasar, Bali\n
+    21 September 2018, Denpasar, Bali\n
     Untuk menjalankan, gunakan perintah: slackwarego\n"
 }
 
