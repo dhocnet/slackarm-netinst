@@ -1,3 +1,5 @@
+# THIS REPO TOTALLY OBSOLETE!!!
+
 # Slackware-current ARM & ARM64 Installer Untuk Termux
 
 ## Apa ini?
