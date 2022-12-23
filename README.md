@@ -1,4 +1,5 @@
-# THIS REPO TOTALLY OBSOLETE!!!
+# THIS REPO WAS OBSOLETE!!!
+touch the new version here: https://github.com/dhocnet/dhocnet/termux-slackwareinstall
 
 # Slackware-current ARM & ARM64 Installer Untuk Termux
 
